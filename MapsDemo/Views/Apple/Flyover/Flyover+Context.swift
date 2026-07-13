@@ -14,6 +14,8 @@ extension Flyover {
         /// The Configuration
         let configuration: Configuration
         
+        // The Address
+        let address: String
     }
     
 }

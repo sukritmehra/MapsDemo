@@ -13,6 +13,7 @@ struct AppleFlyAroundView: View {
     @Environment(\.dismiss) var dismiss // Allows programmatic closing
     
     let location: CLLocationCoordinate2D
+    let propertAddress: String?
     /// Bool value whether Flyover is currently started or stopped
     @State
     private var isStarted = true
@@ -47,7 +48,8 @@ struct AppleFlyAroundView: View {
                     pitch: .init(self.pitch),
                     heading: .increment(by: self.headingStep)
                 ),
-                mapType: self.mapType
+                mapType: self.mapType,
+                address: propertAddress
             )
             .ignoresSafeArea()
             self.actionButtons
@@ -259,5 +261,5 @@ private extension AppleFlyAroundView {
 }
 
 #Preview {
-    AppleFlyAroundView(location: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194))
+    AppleFlyAroundView(location: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), propertAddress: "XYZ")
 }

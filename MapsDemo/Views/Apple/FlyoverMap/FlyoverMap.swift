@@ -23,6 +23,9 @@ public struct FlyoverMap {
     /// A closure to update the underlying FlyoverMapView
     private let updateMapView: ((FlyoverMapView) -> Void)?
     
+    /// The Address
+    private let address: String?
+    
     // MARK: Initializer
     
     /// Creates a new instance of `FlyoverMap`
@@ -37,13 +40,15 @@ public struct FlyoverMap {
         coordinate: CLLocationCoordinate2D,
         configuration: Flyover.Configuration = .default,
         mapType: MKMapType = .standard,
-        updateMapView: ((FlyoverMapView) -> Void)? = nil
+        updateMapView: ((FlyoverMapView) -> Void)? = nil,
+        address: String?
     ) {
         self.isStarted = isStarted
         self.coordinate = coordinate
         self.configuration = configuration
         self.mapType = mapType
         self.updateMapView = updateMapView
+        self.address = address
     }
     
 }
@@ -66,7 +71,8 @@ public extension FlyoverMap {
         longitude: CLLocationDegrees,
         configuration: Flyover.Configuration = .default,
         mapType: MKMapType = .standard,
-        updateMapView: ((FlyoverMapView) -> Void)? = nil
+        updateMapView: ((FlyoverMapView) -> Void)? = nil,
+        address: String?
     ) {
         self.init(
             isStarted: isStarted,
@@ -76,7 +82,8 @@ public extension FlyoverMap {
             ),
             configuration: configuration,
             mapType: mapType,
-            updateMapView: updateMapView
+            updateMapView: updateMapView,
+            address: address ?? ""
         )
     }
     
@@ -112,7 +119,8 @@ extension FlyoverMap: UIViewRepresentable {
             // Start Flyover
             flyoverMapView.startFlyover(
                 at: self.coordinate,
-                configuration: self.configuration
+                configuration: self.configuration,
+                address: self.address
             )
         } else {
             // Stop Flyover

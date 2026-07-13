@@ -47,6 +47,8 @@ open class FlyoverMapView: MKMapView {
         self.showsScale = false
         self.isZoomEnabled = false
         self.isScrollEnabled = false
+        
+        self.delegate = self
     }
     
     /// Initializer with NSCoder is unavailable
@@ -65,7 +67,6 @@ public extension FlyoverMapView {
         mapType: MKMapType
     ) {
         self.init(frame: .zero)
-        self.delegate = self as? any MKMapViewDelegate
         self.mapType = mapType
     }
     
@@ -93,11 +94,13 @@ public extension FlyoverMapView {
     @discardableResult
     func startFlyover(
         at coordinate: CLLocationCoordinate2D,
-        configuration: Flyover.Configuration = .default
+        configuration: Flyover.Configuration = .default,
+        address: String?
     ) -> Bool {
         self.flyover.start(
             at: coordinate,
-            configuration: configuration
+            configuration: configuration,
+            address: address
         )
     }
     
@@ -125,4 +128,27 @@ public extension FlyoverMapView {
         self.flyover.stop()
     }
     
+}
+
+// MARK: - Overlay Delegate
+extension FlyoverMapView: MKMapViewDelegate {
+    
+    public func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if let polygon = overlay as? MKPolygon {
+            return createPolygonRenderer(for: polygon)
+        }
+        return MKOverlayRenderer(overlay: overlay)
+    }
+    
+    func createPolygonRenderer(for polygon: MKPolygon) -> MKPolygonRenderer {
+        let renderer = MKPolygonRenderer(polygon: polygon)
+        renderer.lineWidth = 2
+        
+        // FIX: Correctly calculate colors and opacity for visible borders
+        let color = UIColor.systemBlue
+        renderer.fillColor = color.withAlphaComponent(0.3)
+        renderer.strokeColor = color.withAlphaComponent(1.0)
+        
+        return renderer
+    }
 }

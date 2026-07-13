@@ -85,7 +85,7 @@ struct AppleCardView: View {
         .clipShape(RoundedRectangle(cornerRadius: 22))
         .shadow(radius: 10)
         .sheet(isPresented: $showFlyAround) {
-            AppleFlyAroundView(location: CLLocationCoordinate2D(latitude: Double(listing.Lat!) ?? 0.0, longitude: Double(listing.Lng!) ?? 0.0))
+            AppleFlyAroundView(location: CLLocationCoordinate2D(latitude: Double(listing.Lat!) ?? 0.0, longitude: Double(listing.Lng!) ?? 0.0), propertAddress: listing.address)
         }
     }
 }
