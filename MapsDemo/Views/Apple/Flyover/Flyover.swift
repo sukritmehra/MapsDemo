@@ -130,7 +130,6 @@ private extension Flyover {
                     let pin = MKPointAnnotation()
                     pin.coordinate = context.coordinate
                     pin.title = context.address
-                    pin.
                            
                     // Add the pin to the map view
                     mapView.addAnnotation(pin)
