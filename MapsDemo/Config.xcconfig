@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  MapsDemo
+//
+//  Created by Sukrit Mehra on 15/07/26.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+// Place you Google API Key
+MAPS_API_KEY = xyz
