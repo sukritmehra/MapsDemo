@@ -7,7 +7,6 @@ xcuserdata/
 
 ## Obj-C/Swift specific
 *.hmap
-.DS_Store
 
 ## App packaging
 *.ipa
@@ -64,3 +63,7 @@ fastlane/test_output
 
 # Userdata
 MapsDemo.xcodeproj/project.xcworkspace/xcuserdata/*
+.DS_Store
+MapsDemo.xcodeproj/project.pbxproj
+MapsDemo.xcodeproj/project.xcworkspace/xcuserdata/sukritmehra.xcuserdatad/UserInterfaceState.xcuserstate
+MapsDemo.xcodeproj/xcuserdata/*
