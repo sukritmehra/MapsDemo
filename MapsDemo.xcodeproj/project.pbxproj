@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9033093E300826EC00DED70D /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 9033093D300826EC00DED70D /* GoogleMaps */; };
+		9033097F3008F14A00DED70D /* GoogleMapsUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 9033097E3008F14A00DED70D /* GoogleMapsUtils */; };
+		903309843008F7CE00DED70D /* GoogleMapsUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 903309833008F7CE00DED70D /* GoogleMapsUtils */; };
 		9097DEA53008259C00AA61C9 /* GoogleMaps3D in Frameworks */ = {isa = PBXBuildFile; productRef = 9097DEA43008259C00AA61C9 /* GoogleMaps3D */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +43,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9033097F3008F14A00DED70D /* GoogleMapsUtils in Frameworks */,
 				9033093E300826EC00DED70D /* GoogleMaps in Frameworks */,
+				903309843008F7CE00DED70D /* GoogleMapsUtils in Frameworks */,
 				9097DEA53008259C00AA61C9 /* GoogleMaps3D in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +91,8 @@
 			packageProductDependencies = (
 				9097DEA43008259C00AA61C9 /* GoogleMaps3D */,
 				9033093D300826EC00DED70D /* GoogleMaps */,
+				9033097E3008F14A00DED70D /* GoogleMapsUtils */,
+				903309833008F7CE00DED70D /* GoogleMapsUtils */,
 			);
 			productName = MapsDemo;
 			productReference = 909C523B2FEBE0D800AAD85B /* MapsDemo.app */;
@@ -119,6 +125,7 @@
 			packageReferences = (
 				9097DEA33008259C00AA61C9 /* XCRemoteSwiftPackageReference "ios-maps-3d-sdk" */,
 				9033093C300826EC00DED70D /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+				903309823008F7CE00DED70D /* XCLocalSwiftPackageReference "../google-maps-ios-utils-7.1.0" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 909C523C2FEBE0D800AAD85B /* Products */;
@@ -276,8 +283,10 @@
 		};
 		909C52472FEBE0D900AAD85B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 909C523D2FEBE0D800AAD85B /* MapsDemo */;
+			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = HawaiiLocations;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -310,8 +319,10 @@
 		};
 		909C52482FEBE0D900AAD85B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 909C523D2FEBE0D800AAD85B /* MapsDemo */;
+			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = HawaiiLocations;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -365,6 +376,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		903309823008F7CE00DED70D /* XCLocalSwiftPackageReference "../google-maps-ios-utils-7.1.0" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../google-maps-ios-utils-7.1.0";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		9033093C300826EC00DED70D /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -389,6 +407,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9033093C300826EC00DED70D /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
 			productName = GoogleMaps;
+		};
+		9033097E3008F14A00DED70D /* GoogleMapsUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GoogleMapsUtils;
+		};
+		903309833008F7CE00DED70D /* GoogleMapsUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GoogleMapsUtils;
 		};
 		9097DEA43008259C00AA61C9 /* GoogleMaps3D */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -12,8 +12,6 @@ struct AppleMapsView: View {
     
     let title: String
     
-//    @State private var initialCameraPosition: MapCameraPosition = .region(.hawaiiInslandRegion)
-    
     @StateObject private var viewModel = AppleMapsViewModel()
     @StateObject private var mapController = AppleMapController()
     
